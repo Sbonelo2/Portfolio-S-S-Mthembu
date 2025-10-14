@@ -41,8 +41,8 @@ export default function Contact() {
     {
       icon: <Phone size={24} />,
       title: 'Phone',
-      value: 'Available on request',
-      link: null,
+      value: '060 621 8075',
+      link: 'tel:+27606218075',
     },
     {
       icon: <MapPin size={24} />,

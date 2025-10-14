@@ -1,6 +1,7 @@
-import { ArrowRight, Code, Palette, Zap, Download } from 'lucide-react';
+import { ArrowRight, Code, Palette, Zap, ArrowDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import image from '../img/WhatsApp Image 2025-09-25 at 11.27.53.jpeg';
 
 export default function Home() {
   const skills = [
@@ -14,6 +15,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content fade-in">
+          <img src={image} alt="Profile" className="profile-image" />
+         
           <h1 className="hero-title">
             Hi, I'm <span className="gradient-text">S'bonelo Silwane Mthembu</span>
           </h1>
@@ -62,7 +65,7 @@ export default function Home() {
           </p>
           <div className="cta-buttons">
             <Link to="/cv" className="btn btn-outline">
-              <Download size={20} /> Download CV
+              <ArrowDown size={20} /> View CV
             </Link>
             <Link to="/contact" className="btn btn-primary">
               Start a Conversation
