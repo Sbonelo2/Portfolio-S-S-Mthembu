@@ -1,73 +1,103 @@
-# React + TypeScript + Vite
+# Portfolio - Sbonelo S Mthembu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, TypeScript, and Vite. This portfolio showcases my projects, skills, experience, and provides a way to get in touch.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern Design**: Clean, professional UI with smooth animations and transitions
+- **Fully Responsive**: Optimized for all devices (mobile, tablet, desktop)
+- **Fast Performance**: Built with Vite for lightning-fast development and production builds
+- **Type-Safe**: Written in TypeScript for better code quality and developer experience
+- **Routing**: Client-side routing with React Router for seamless navigation
+- **Interactive Components**: Dynamic forms, hover effects, and engaging user interactions
 
-## React Compiler
+## 📁 Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── Components/       # Reusable components (Header, Footer)
+├── Pages/           # Page components (Home, Projects, CV, Contact)
+├── App.tsx          # Main app component with routing
+├── main.tsx         # Application entry point
+└── index.css        # Global styles
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Technologies Used
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **React Router DOM** - Client-side routing
+- **Lucide React** - Icon library
+- **CSS3** - Styling with modern features
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🎨 Pages
+
+1. **Home** - Hero section with introduction and call-to-actions
+2. **Projects** - Showcase of featured and other projects
+3. **CV** - Professional experience, education, skills, and certifications
+4. **Contact** - Contact form and information
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd "Portfolio S S Mthembu"
 ```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## 📦 Build for Production
+
+```bash
+npm run build
+```
+
+The production-ready files will be in the `dist` directory.
+
+## 🔧 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint
+
+## 🎨 Customization
+
+To customize this portfolio for your own use:
+
+1. Update personal information in the page components
+2. Replace project data in `src/Pages/Project.tsx`
+3. Update experience and education in `src/Pages/Cv.tsx`
+4. Modify contact information in `src/Pages/Contact.tsx`
+5. Adjust color scheme in `src/index.css` (CSS variables)
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+## 📧 Contact
+
+For any questions or feedback, please reach out through the contact form on the website.
+
+---
+
+Built with ❤️ using React and TypeScript
