@@ -1,44 +1,16 @@
 import { Download, Briefcase, GraduationCap, Award, Code } from 'lucide-react';
-import { useEffect, useRef } from 'react';
 import './Cv.css';
+import cvPdf from '../cv/PRIVATE AND CONFIDENTIAL PROFILE CV SBONELO (1).pdf';
 
 export default function Cv() {
-  const cvContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Smooth scroll from top to bottom when component mounts
-    const scrollToBottom = () => {
-      if (cvContainerRef.current) {
-        const scrollHeight = cvContainerRef.current.scrollHeight;
-        const duration = 3000; // 3 seconds for smooth scroll
-        const start = window.pageYOffset;
-        const startTime = performance.now();
-
-        const scroll = (currentTime: number) => {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          
-          // Easing function for smooth animation
-          const easeInOutQuad = (t: number) => 
-            t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-          
-          const scrollTo = start + (scrollHeight - start) * easeInOutQuad(progress);
-          window.scrollTo(0, scrollTo);
-
-          if (progress < 1) {
-            requestAnimationFrame(scroll);
-          }
-        };
-
-        // Start scrolling after a short delay
-        setTimeout(() => {
-          requestAnimationFrame(scroll);
-        }, 500);
-      }
-    };
-
-    scrollToBottom();
-  }, []);
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = cvPdf;
+    link.download = 'Sbonelo_Mthembu_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   const experience = [
     {
       title: 'TTACTSO Project Coordinator',
@@ -94,7 +66,7 @@ export default function Cv() {
   };
 
   return (
-    <div className="cv-page" ref={cvContainerRef}>
+    <div className="cv-page">
       <div className="cv-container">
         <header className="cv-header fade-in">
           <div className="cv-header-content">
@@ -108,7 +80,7 @@ export default function Cv() {
               <p className="cv-info-item">⏰ Available: {personalInfo.availability}</p>
             </div>
           </div>
-          <button className="download-btn">
+          <button className="download-btn" onClick={handleDownloadCV}>
             <Download size={20} />
             Download PDF
           </button>

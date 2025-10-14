@@ -35,11 +35,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="hero-visual">
-          <div className="floating-card"></div>
-          <div className="floating-card delay-1"></div>
-          <div className="floating-card delay-2"></div>
-        </div>
       </section>
 
       {/* Skills Section */}

@@ -39,7 +39,7 @@
 
 .cv-role {
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: #000000;
   margin-bottom: 1rem;
 }
 
@@ -52,7 +52,7 @@
 
 .cv-info-item {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: #000000;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -72,7 +72,8 @@
 
 .download-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
 }
 
 .cv-section {
@@ -95,7 +96,7 @@
 }
 
 .objective-text {
-  color: var(--text-secondary);
+  color: #000000;
   line-height: 1.8;
   font-size: 1.05rem;
 }
@@ -110,7 +111,7 @@
 .section-icon {
   width: 32px;
   height: 32px;
-  color: var(--primary);
+  color: #000000;
 }
 
 .section-title {
@@ -146,7 +147,7 @@
   top: 0;
   width: 12px;
   height: 12px;
-  background: var(--primary);
+  background: #000000;
   border-radius: 50%;
   border: 3px solid var(--bg-primary);
 }
@@ -181,17 +182,17 @@
 }
 
 .company {
-  color: var(--primary);
+  color: #000000;
   font-weight: 600;
 }
 
 .period {
-  color: var(--text-muted);
+  color: #000000;
   font-size: 0.95rem;
 }
 
 .job-description {
-  color: var(--text-secondary);
+  color: #000000;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -204,7 +205,7 @@
 .achievements-list li {
   position: relative;
   padding-left: 1.5rem;
-  color: var(--text-secondary);
+  color: #000000;
   margin-bottom: 0.5rem;
   line-height: 1.6;
 }
@@ -213,7 +214,7 @@
   content: '▹';
   position: absolute;
   left: 0;
-  color: var(--primary);
+  color: #000000;
   font-weight: bold;
 }
 
@@ -253,12 +254,12 @@
 }
 
 .institution {
-  color: var(--primary);
+  color: #000000;
   font-weight: 600;
 }
 
 .edu-description {
-  color: var(--text-secondary);
+  color: #000000;
   line-height: 1.6;
 }
 
@@ -291,10 +292,10 @@
 
 .skill-tag {
   padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.03);
   border: 1px solid var(--border);
   border-radius: 6px;
-  color: var(--text-secondary);
+  color: #000000;
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -324,7 +325,7 @@
 .cert-marker {
   width: 10px;
   height: 10px;
-  background: var(--primary);
+  background: #000000;
   border-radius: 50%;
   flex-shrink: 0;
 }
