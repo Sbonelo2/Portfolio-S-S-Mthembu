@@ -20,7 +20,7 @@ export default function Header() {
     <header className="header">
       <div className="header-container">
         <Link to="/" className="logo">
-          <span className="logo-text">SSM</span>
+          <span className="logo-text">S.S.M</span>
         </Link>
 
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
