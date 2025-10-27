@@ -3,16 +3,7 @@ import './Project.css';
 
 export default function Project() {
   const projects = [
-    {
-      id: 1,
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with React, TypeScript, and Vite showcasing my skills and projects.',
-      technologies: ['React', 'TypeScript', 'CSS', 'Vite'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
-      github: 'https://github.com/Sbonelo2/Portfolio-S-S-Mthembu',
-      live: '#',
-      featured: true,
-    },
+    
     {
       id: 2,
       title: 'Simple Ollama AI React GUI',
