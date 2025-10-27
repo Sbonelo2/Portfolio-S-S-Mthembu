@@ -1,13 +1,44 @@
-import { ArrowRight, Code, Palette, Zap, ArrowDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import './Home.css';
-import image from '../img/WhatsApp Image 2025-09-25 at 11.27.53.jpeg';
+import {
+  ArrowRight,
+  Code,
+  Palette,
+  Zap,
+  ArrowDown,
+  Layout,
+  Database,
+  // Git,
+  Globe,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import "./Home.css";
+import image from "../img/WhatsApp Image 2025-09-25 at 11.27.53.jpeg";
 
 export default function Home() {
   const skills = [
-    { icon: <Code size={32} />, title: 'Business Analysis', description: 'Analyzing business requirements and delivering ICT solutions' },
-    { icon: <Palette size={32} />, title: 'Database Management', description: 'SQL and MySQL database design and optimization' },
-    { icon: <Zap size={32} />, title: 'Strategic Planning', description: 'Planning and executing technology projects effectively' },
+    {
+      icon: <Code size={32} />,
+      title: "Frontend Development",
+      description:
+        "Crafting modern web interfaces with React, Redux, and TypeScript. Expertise in responsive design, component architecture, and creating engaging user experiences.",
+    },
+    {
+      icon: <Zap size={32} />,
+      title: "Backend Development",
+      description:
+        "Building scalable server solutions with Node.js and Express. Implementing RESTful APIs, authentication systems, and efficient database operations.",
+    },
+    {
+      icon: <Palette size={32} />,
+      title: "Full Stack Integration",
+      description:
+        "End-to-end application development from database design to UI. Proficient in MERN stack, API integration, and deploying complete web solutions.",
+    },
+    {
+      icon: <Code size={32} />,
+      title: "Modern Technologies",
+      description:
+        "Leveraging cutting-edge tools like TypeScript, Redux, Git version control, and implementing CI/CD pipelines for automated deployment.",
+    },
   ];
 
   return (
@@ -22,7 +53,7 @@ export default function Home() {
             <span className="gradient-text">S'bonelo Silwane Mthembu</span>
           </h1>
           <h2 className="hero-subtitle">
-            ICT Graduate - Business Analysis Specialist
+            ICT Graduate - Business Analysis & Full Stack Developer
           </h2>
           <p className="hero-description">
             I’m an ICT graduate (NQF Level 6) and Full Stack Developer dedicated

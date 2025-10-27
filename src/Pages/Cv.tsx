@@ -80,7 +80,7 @@ export default function Cv() {
     phone: "060 621 8075",
     website: "https://portfolio-s-s-mthembu.onrender.com",
     driversLicense: "C1",
-    maritalStatus: "Single",
+    // maritalStatus: "Single",
     citizenship: "South African",
     dateOfBirth: "24 October 2002",
     idNumber: "0210245572081",
@@ -214,7 +214,7 @@ export default function Cv() {
               </div>
               <div>
                 <strong>Drivers License:</strong> {personalInfo.driversLicense}{" "}
-                ({personalInfo.maritalStatus})
+                {/* ({personalInfo.maritalStatus}) */}
               </div>
             </div>
           </div>
