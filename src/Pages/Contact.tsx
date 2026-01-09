@@ -1,68 +1,18 @@
-import { useState } from "react";
 import {
   Mail,
   Phone,
   MapPin,
-  Send,
   Github,
   Linkedin,
   Facebook,
 } from "lucide-react";
-import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const [status, setStatus] = useState<
-    "idle" | "sending" | "success" | "error"
-  >("idle");
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-
-    try {
-      // Replace these with your actual EmailJS service ID, template ID, and public key
-      const serviceId = "YOUR_SERVICE_ID";
-      const templateId = "YOUR_TEMPLATE_ID";
-      const publicKey = "YOUR_PUBLIC_KEY";
-
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          to_email: "cbonelo224@gmail.com", // Your email address
-        },
-        publicKey
-      );
-
-      setStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setStatus("idle"), 3000);
-    } catch (error) {
-      console.error("Failed to send email:", error);
-      setStatus("error");
-      setTimeout(() => setStatus("idle"), 3000);
-    }
+  const handleGmailContact = () => {
+    const subject = encodeURIComponent("Portfolio Contact - New Message");
+    const body = encodeURIComponent("Hi Sbonelo,\n\nI came across your portfolio and would like to connect with you regarding...\n\nBest regards,\n[Your Name]");
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=cbonelo224@gmail.com&su=${subject}&body=${body}`, '_blank');
   };
 
   const contactInfo = [
@@ -171,99 +121,19 @@ export default function Contact() {
 
           {/* Contact Form */}
           <div className="contact-form-wrapper fade-in">
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-group">
-                <label htmlFor="name" className="form-label">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="email" className="form-label">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="your.email@example.com"
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="subject" className="form-label">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="What's this about?"
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message" className="form-label">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="form-textarea"
-                  placeholder="Your message..."
-                  rows={6}
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="submit-btn"
-                disabled={status === "sending"}
-              >
-                {status === "sending" ? (
-                  "Sending..."
-                ) : status === "success" ? (
-                  "Message Sent!"
-                ) : (
-                  <>
-                    Send Message <Send size={20} />
-                  </>
-                )}
+            <div className="gmail-contact">
+              <h2 className="form-title">Send Me a Message</h2>
+              <p className="form-description">
+                Prefer using Gmail? Click the button below to open your Gmail client with a pre-filled message.
+              </p>
+              <button onClick={handleGmailContact} className="gmail-btn">
+                <Mail size={20} />
+                Open in Gmail
               </button>
-
-              {status === "success" && (
-                <p className="success-message">
-                  Thank you for your message! I'll get back to you soon.
-                </p>
-              )}
-              {status === "error" && (
-                <p className="error-message">
-                  Sorry, something went wrong. Please try again or email me
-                  directly at cbonelo224@gmail.com
-                </p>
-              )}
-            </form>
+              <p className="alternative-contact">
+                Or email me directly at: <a href="mailto:cbonelo224@gmail.com">cbonelo224@gmail.com</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -2,24 +2,59 @@
   min-height: 100vh;
   padding-top: 100px;
   padding-bottom: 2rem;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-card) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-header {
   text-align: center;
   margin-bottom: 4rem;
+  position: relative;
+}
+
+.contact-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 2px;
 }
 
 .contact-title {
   font-size: 3rem;
   font-weight: 800;
-  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 .contact-subtitle {
@@ -27,6 +62,8 @@
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .contact-content {
@@ -65,28 +102,54 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  padding: 1.25rem;
+  padding: 1.5rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .info-item:hover {
   border-color: var(--primary);
-  transform: translateX(5px);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.info-item:hover::before {
+  transform: scaleX(1);
 }
 
 .info-icon {
-  width: 48px;
-  height: 48px;
-  background: var(--text-primary);
-  border-radius: 10px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--bg-primary);
+  color: white;
   flex-shrink: 0;
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.info-item:hover .info-icon {
+  transform: rotate(5deg) scale(1.1);
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3);
 }
 
 .info-details {
@@ -129,114 +192,227 @@ a.info-value:hover {
 }
 
 .social-link {
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
 }
 
 .social-link:hover {
-  background: var(--text-primary);
   border-color: transparent;
-  color: var(--bg-primary);
-  transform: translateY(-3px);
+  color: white;
+  transform: translateY(-5px) rotate(5deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.social-link:hover::before {
+  width: 100px;
+  height: 100px;
+}
+
+.social-link svg {
+  position: relative;
+  z-index: 1;
 }
 
 /* Contact Form */
 .contact-form-wrapper {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 2rem;
+  border-radius: 24px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.contact-form {
+.contact-form-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gmail-contact {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 2rem;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
 }
 
-.form-label {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
+.form-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 450px;
+  margin: 0 auto;
+  font-size: 1.05rem;
 }
 
-.form-input,
-.form-textarea {
-  padding: 0.875rem 1rem;
-  background: var(--bg-primary);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text-primary);
-  font-size: 1rem;
-  font-family: inherit;
-  transition: all 0.3s ease;
-}
-
-.form-input:focus,
-.form-textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder {
-  color: var(--text-muted);
-}
-
-.form-textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
-.submit-btn {
+.gmail-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background: var(--text-primary);
-  color: var(--bg-primary);
-  border-radius: 8px;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  background: linear-gradient(135deg, #000000 0%, #333333 50%, #000000 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
   font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
 }
 
-.submit-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  opacity: 0.9;
+.gmail-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
 }
 
-.submit-btn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
+.gmail-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
-.success-message {
+.gmail-btn:hover::before {
+  left: 100%;
+}
+
+.gmail-btn:active {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.alternative-contact {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text-primary);
-  text-align: center;
-  font-weight: 500;
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  transition: all 0.3s ease;
+}
+
+.alternative-contact:hover {
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.alternative-contact a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.alternative-contact a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.alternative-contact a:hover::after {
+  width: 100%;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.contact-header {
+  animation-delay: 0.2s;
+}
+
+.contact-info {
+  animation-delay: 0.4s;
+}
+
+.contact-form-wrapper {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse animation for Gmail button */
+.gmail-btn {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.5);
+  }
 }
 
 /* Responsive Design */
@@ -273,7 +449,31 @@ a.info-value:hover {
   }
 
   .contact-form-wrapper {
-    padding: 1.5rem;
+    padding: 2rem;
+  }
+
+  .gmail-contact {
+    gap: 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.6rem;
+  }
+
+  .form-description {
+    font-size: 1rem;
+    max-width: 350px;
+  }
+
+  .gmail-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    min-width: 180px;
+  }
+
+  .alternative-contact {
+    font-size: 0.9rem;
+    padding: 0.875rem;
   }
 
   .social-links {
