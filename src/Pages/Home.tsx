@@ -4,10 +4,6 @@ import {
   Palette,
   Zap,
   ArrowDown,
-  Layout,
-  Database,
-  // Git,
-  Globe,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./Home.css";
