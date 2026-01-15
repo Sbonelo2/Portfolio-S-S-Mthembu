@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import image from "../img/WhatsApp Image 2025-09-25 at 11.27.53.jpeg";
 
 export default function Home() {
   const skills = [
@@ -46,8 +45,6 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content fade-in">
-          <img src={image} alt="Profile" className="profile-image" />
-
           <h1 className="hero-title">
             Hi, I'm{" "}
             <span className="gradient-text">S'bonelo Silwane Mthembu</span>
