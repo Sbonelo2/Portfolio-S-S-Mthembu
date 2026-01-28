@@ -2,6 +2,15 @@ import { ExternalLink, Github } from 'lucide-react';
 import './Project.css';
 
 export default function Project() {
+  const handleLinkClick = (url: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (url && url !== '#') {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   const projects = [
     
     {
@@ -10,8 +19,8 @@ export default function Project() {
       description: 'Real-time weather application with location-based forecasts and weather data visualization.',
       technologies: ['React', 'API', 'Weather API', 'JavaScript'],
       image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=500&fit=crop',
-      github: 'https://github.com/Sbonelo2/Task-4--Weather-Application',
-      live: 'https://task-4-weather-application-b6hl.onrender.com',
+      github: 'https://github.com/Sbonelo2/Weather-Focus',
+      live: 'https://weather-focus.onrender.com',
       featured: true,
     },
     {
@@ -183,12 +192,20 @@ export default function Project() {
                   <img src={project.image} alt={project.title} className="project-image" />
                   <div className="project-overlay">
                     <div className="project-links">
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
+                      <button 
+                        onClick={(e) => handleLinkClick(project.github, e)}
+                        className="project-link"
+                        aria-label="View GitHub repository"
+                      >
                         <Github size={20} />
-                      </a>
-                      <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link">
+                      </button>
+                      <button 
+                        onClick={(e) => handleLinkClick(project.live, e)}
+                        className="project-link"
+                        aria-label="View live project"
+                      >
                         <ExternalLink size={20} />
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -220,12 +237,20 @@ export default function Project() {
                   <img src={project.image} alt={project.title} className="project-image" />
                   <div className="project-overlay">
                     <div className="project-links">
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
+                      <button 
+                        onClick={(e) => handleLinkClick(project.github, e)}
+                        className="project-link"
+                        aria-label="View GitHub repository"
+                      >
                         <Github size={20} />
-                      </a>
-                      <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link">
+                      </button>
+                      <button 
+                        onClick={(e) => handleLinkClick(project.live, e)}
+                        className="project-link"
+                        aria-label="View live project"
+                      >
                         <ExternalLink size={20} />
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
