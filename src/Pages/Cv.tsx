@@ -1,6 +1,6 @@
-import { Download, Briefcase, GraduationCap, Award, Code } from "lucide-react";
+import { Download } from "lucide-react";
 import "./Cv.css";
-import cvPdf from "../cv/S'bonelo-CV.pdf";
+import cvPdf from "../cv/S'BONELO'S_CV_01.pdf";
 
 export default function Cv() {
   const handleDownloadCV = () => {
@@ -11,73 +11,84 @@ export default function Cv() {
     link.click();
     document.body.removeChild(link);
   };
-  const experience = [
-    {
-      title: "TTACTSO Project Coordinator",
-      Organization: "TTACTSO",
-      period: "2023 - 2024",
-      description:
-        "Coordinated technology and innovation projects, demonstrating leadership and organizational skills.",
-      achievements: [
-        "Successfully managed project timelines and deliverables",
-        "Collaborated with team members and stakeholders",
-        "Received acknowledgement certificate for outstanding contribution",
-      ],
-    },
-  ];
-
+  
   const education = [
     {
-      degree:
-        "Diploma in Information and Communication Technology – Business Analysis (NQF Level 6)",
+      degree: "Diploma in ICT Business Analysis",
       institution: "Durban University of Technology",
-      period: "02/2022 – 06/2025",
+      period: "01/2022 – 06/2025",
       location: "Pietermaritzburg",
-      description:
-        "Focused on bridging business and technology through systems analysis, database management, and software development; preparation for roles as a Full Stack Developer and ICT professional.",
+      description: "Diploma in Information and Communication Technology – Business Analysis (NQF Level 6)Focused on bridging business and technology through systems analysis, database management, software development, and enhancing my effectiveness as a Full Stack Developer and ICT professional.",
     },
     {
-      degree: "Matric (Science Stream)",
+      degree: "Matric",
       institution: "Mashalaza High School",
-      period: "01/2020 – 11/2021",
+      period: "01/2017 – 12/2021",
       location: "Manguzi",
-      description:
-        "Completed matric with focus on Mathematics, Physical Science, Life Science, and Agricultural Science — developed analytical and problem-solving skills.",
+      description: "Science Stream: Completed matric with a focus on Mathematics, Physical Science, Life Science, and Agricultural Science. This academic foundation developed strong analytical, logical, and problem-solving skills, which contribute to my effectiveness as a Full Stack Developer and ICT professional.",
     },
   ];
 
   const skills = {
     "Programming & Markup": [
+      "Python",
       "C#",
       "JavaScript",
-      "Python",
       "HTML",
       "CSS",
-      "SQL",
+      "TypeScript",
     ],
-    "Frameworks & Libraries": ["React", "Redux", "Node.js"],
-    "Tools & Platforms": ["GitHub", "Excel", "Visual Studio Code"],
-    "AI & Data": ["AI Models"],
+    "Frameworks & Libraries": ["React", "Node.js", "MongoDB", "PostgreSQL", "Supabase", "Firebase"],
+    "Tools & Platforms": ["GitHub", "AI Models"],
+    "Technical Skills": [
+      "CRUD operations",
+      "REST APIs",
+      "UI/UX understanding",
+      "Responsive design",
+    ],
     "Soft Skills": [
       "Problem Solving",
-      "Presentation (PowerPoint)",
-      "Project Coordination",
-      "Communication",
+      "Team collaboration",
+      "Time management",
+      "Communication skills",
+      "Adaptability",
     ],
-    "Computer Literacy": ["General computer literacy"],
+    "Computer Literacy": ["Computer Literacy"],
+    "Presentation": ["Power point presentation"],
   };
 
   const certifications = [
-    "Acknowledgement Certificate from TTACTSO as Project Coordinator",
-    "Computer Literate",
-    "Driver's License - Code C1 (Holder of a valid C1)",
+    {
+      title: "Driver's License",
+      description: "Holder of a valid Code 10 (C1) driver's license, demonstrating responsibility, reliability, and the ability to operate mediumsized vehicles safely and efficiently.",
+    },
+    {
+      title: "Artificial Intelligence",
+      description: "Successfully completed a 2-hour DataCamp course on Understanding Artificial Intelligence, gaining foundational knowledge of AI concepts, including machine learning principles, neural networks, and real-world applications. Developed an understanding of how AI systems analyze data, make predictions, and support decision-making, with practical exposure to AI workflows and tools.",
+    },
+    {
+      title: "JavaScript Algorithms And Data Structure",
+      description: "Completed training in JavaScript Algorithms and Data Structures on freeCodeCamp with a strong foundation in algorithmic problemsolving, core data structures, and common algorithms such as searching, sorting, and recursion. Familiar with ES6+ JavaScript features and performance analysis using Big O notation, with hands-on experience solving and optimizing coding challenges.",
+    },
+    {
+      title: "Geekulcha_Hackathon_Certificate",
+      description: "Participated in the Geekulcha Annual Hackathon (26–28 September 2025) as part of the team Code Bros, developing the Youth Link solution. Gained handson experience in collaborative problem-solving, innovative solution design, and applying technology for sustainable development.",
+    },
+    {
+      title: "Responsive Web design",
+      description: "Completed the Responsive Web Design certification on freeCodeCamp, with hands-on experience building mobilefirst, responsive web pages using HTML5 and CSS3. Familiar with CSS Flexbox, Grid layouts, media queries, and basic accessibility best practices.",
+    },
+    {
+      title: "Project Coordinator & events",
+      description: "Experienced in planning and executing projects and events, coordinating teams, managing schedules and resources, and ensuring successful outcomes through effective communication and problemsolving.",
+    },
   ];
 
   const personalInfo = {
     fullName: "S'bonelo Mthembu",
     role: "Software Developer",
     email: "cbonelo224@gmail.com",
-    phone: "060 621 8075",
+    phone: "+27 60 621 8075",
     website: "https://portfolio-s-s-mthembu.onrender.com",
     driversLicense: "C1",
     // maritalStatus: "Single",
@@ -92,7 +103,7 @@ export default function Cv() {
     languages: "English, IsiZulu, Sithonga",
   };
 
-  const profileText = `I’m an ICT graduate (NQF Level 6) and Full Stack Developer dedicated to continuous learning and innovation. With a passion for both design and development, I build responsive, data-driven web applications that solve real-world problems. My focus is on growth, creativity, and contributing meaningful value within the Information and Communication Technology space.`;
+  const profileText = `I'm an ICT graduate (NQF Level 6) and Full Stack Developer dedicated to continuous learning and innovation. With a passion for both design and development, I build responsive, data-driven web applications that solve real-world problems. I focus on growth, creativity, and contributing meaningful value within the Information and Communication Technology space. Additionally, I am the CEO and founder of two businesses, demonstrating leadership, entrepreneurship, and the ability to drive projects from concept to execution.`;
 
   const projects = [
     {
@@ -129,10 +140,13 @@ export default function Cv() {
 
   const references = [
     {
-      name: "L Makhaye, TTACTSO Representative Chairperson",
+      name: "L MAKHAYE, TTACTSO Representative Chairperson",
       phone: "076 065 8736",
     },
-    { name: "Miss Gwala, Matric", phone: "079 270 3411" },
+    { 
+      name: "Miss GWALA, Teacher, Matric", 
+      phone: "079 270 3411" 
+    },
   ];
 
   return (
@@ -145,8 +159,8 @@ export default function Cv() {
             <p className="cv-role">{personalInfo.role}</p>
             <div className="cv-contact-info">
               <p className="cv-info-item">📧 {personalInfo.email}</p>
-              <p className="cv-info-item">� {personalInfo.phone}</p>
-              <p className="cv-info-item">� {personalInfo.location}</p>
+              <p className="cv-info-item">📞 {personalInfo.phone}</p>
+              <p className="cv-info-item">📍 {personalInfo.location}</p>
               <p className="cv-info-item">🗣️ {personalInfo.languages}</p>
             </div>
           </div>
@@ -220,40 +234,10 @@ export default function Cv() {
           </div>
         </section>
 
-        {/* Experience Section */}
-        <section className="cv-section fade-in">
-          <div className="section-header">
-            <Briefcase className="section-icon" />
-            <h2 className="section-title">Work Experience</h2>
-          </div>
-          <div className="timeline">
-            {experience.map((job, index) => (
-              <div key={index} className="timeline-item">
-                <div className="timeline-marker"></div>
-                <div className="timeline-content">
-                  <h3 className="job-title">{job.title}</h3>
-                  <div className="job-meta">
-                    <span className="company">{job.Organization}</span>
-                    <span className="period">{job.period}</span>
-                  </div>
-                  <p className="job-description">{job.description}</p>
-                  <ul className="achievements-list">
-                    {job.achievements.map((achievement, i) => (
-                      <li key={i}>{achievement}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
+        
         {/* Education Section */}
         <section className="cv-section fade-in">
-          <div className="section-header">
-            <GraduationCap className="section-icon" />
-            <h2 className="section-title">Education</h2>
-          </div>
+          <h2 className="section-title">Education</h2>
           <div className="education-grid">
             {education.map((edu, index) => (
               <div key={index} className="education-card">
@@ -272,10 +256,7 @@ export default function Cv() {
 
         {/* Skills Section */}
         <section className="cv-section fade-in">
-          <div className="section-header">
-            <Code className="section-icon" />
-            <h2 className="section-title">Technical Skills</h2>
-          </div>
+          <h2 className="section-title">Technical Skills</h2>
           <div className="skills-grid">
             {Object.entries(skills).map(([category, items]) => (
               <div key={category} className="skill-category">
@@ -294,10 +275,7 @@ export default function Cv() {
 
         {/* Projects Section */}
         <section className="cv-section fade-in">
-          <div className="section-header">
-            <Code className="section-icon" />
-            <h2 className="section-title">Projects</h2>
-          </div>
+          <h2 className="section-title">Projects</h2>
           <div className="projects-grid">
             {projects.map((p, i) => (
               <div key={i} className="project-card">
@@ -310,15 +288,15 @@ export default function Cv() {
 
         {/* Certifications Section */}
         <section className="cv-section fade-in">
-          <div className="section-header">
-            <Award className="section-icon" />
-            <h2 className="section-title">Certifications</h2>
-          </div>
+          <h2 className="section-title">Certifications</h2>
           <div className="certifications-list">
             {certifications.map((cert, index) => (
               <div key={index} className="certification-item">
                 <div className="cert-marker"></div>
-                <span className="cert-name">{cert}</span>
+                <div>
+                  <strong className="cert-name">{cert.title}</strong>
+                  <p className="cert-description">{cert.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -326,10 +304,7 @@ export default function Cv() {
 
         {/* References Section */}
         <section className="cv-section fade-in">
-          <div className="section-header">
-            <Briefcase className="section-icon" />
-            <h2 className="section-title">References</h2>
-          </div>
+          <h2 className="section-title">References</h2>
           <div className="references-list">
             {references.map((ref, i) => (
               <div key={i} className="reference-item">
